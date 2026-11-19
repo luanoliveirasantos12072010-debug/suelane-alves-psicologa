@@ -366,6 +366,16 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
 .vm video{max-width:100%;max-height:calc(100svh - 32px);width:auto;height:calc(100svh - 32px);aspect-ratio:478/850;object-fit:contain;border-radius:16px;pointer-events:none;background:#000}
 .vm button{position:absolute;top:18px;right:18px;z-index:2;width:54px;height:54px;border-radius:50%;border:0;background:var(--gold);color:var(--cocoa);font-size:26px;cursor:pointer}
 @media(max-width:860px){.vd .grid{grid-template-columns:1fr}.vd .grid>div:first-child{text-align:left}}
+
+.who{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px}
+.who .nm{font-family:var(--serif);font-size:clamp(26px,2.6vw,34px);line-height:1}
+.who .mst{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:999px;background:var(--gold);color:var(--cocoa);font-size:14.5px;font-weight:500;letter-spacing:.03em;box-shadow:0 14px 30px -14px rgba(224,180,106,.9)}
+.who .mst svg{width:19px;height:19px;flex:none}
+.hz .card.wide{flex-basis:clamp(320px,36vw,500px)}
+.hz .card.wide p{font-size:17.5px}
+.hz .card.hl{background:var(--gold);color:var(--cocoa)}
+.hz .card.hl small{color:var(--terraD)}
+.hz .card.hl .n{-webkit-text-stroke-color:var(--cocoa)}
 </style>
 </head>
 <body>
@@ -394,7 +404,8 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
   <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
   <div class="wrap" id="hwrap">
     <div>
-      <span class="kick rv">Psicóloga Clínica · CRP 02/16654</span>
+      <div class="who rv"><span class="nm">Suelane Alves</span><span class="mst"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></svg>Mestra em Saúde Mental</span></div>
+      <span class="kick rv" style="margin-top:16px">Psicóloga Clínica · CRP 02/16654</span>
       <h1><span class="sp" id="h1a">Cuidado</span><span class="sp l2" id="h1b"><em class="gold">como gesto</em></span></h1>
       <p class="sub rv d2">Notas sobre um percurso, experiência e clínica.</p>
       <p class="lead rv d2">Um espaço de escuta e acompanhamento dos modos singulares de existir. Presencial em Garanhuns/PE e on-line para quem fala português, no Brasil e no exterior.</p>
@@ -427,12 +438,12 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
   <div class="pin">
     <div class="head"><span class="kick rv">Trajetória</span><h2 class="sp" style="margin-top:20px" id="h2t">Um percurso entre a <em class="gold">saúde pública</em> e a clínica</h2></div>
     <div class="track" id="trk">
-      <article class="card"><span class="n">01</span><small>Graduação</small><h3>Psicologia</h3><p>Graduada em Psicologia pela Universidade de Pernambuco.</p></article>
-      <article class="card"><span class="n">02</span><small>Formação</small><h3>Saúde Pública</h3><p>Formação posterior em Saúde Pública.</p></article>
+      <article class="card"><span class="n">01</span><small>Desde 2013</small><h3>Clínica e saúde pública</h3><p>Minha trajetória na Psicologia começou em 2013 e se desenvolve entre a clínica particular e a saúde pública.</p></article>
+      <article class="card wide"><span class="n">02</span><small>Experiência</small><h3>Diferentes públicos e contextos</h3><p>Ao longo desses anos, trabalhei com diferentes públicos e contextos, experiências que ampliaram meu olhar sobre o sofrimento humano e suas relações com a vida e a realidade social.</p></article>
       <article class="card ph"><img src="img/retrato-notebook.jpg" alt="Suelane Alves fazendo anotações" loading="lazy"></article>
-      <article class="card"><span class="n">03</span><small>Mestrado</small><h3>Saúde Mental</h3><p>Mestrado em Saúde Mental.</p></article>
-      <article class="card"><span class="n">04</span><small>Experiência</small><h3>Sistema Público de Saúde</h3><p>Trabalho no Sistema Público de Saúde, no interior de Pernambuco.</p></article>
-      <article class="card"><span class="n">05</span><small>Desde 2013</small><h3>Clínica particular</h3><p>Atendimento clínico de crianças, adolescentes e adultos, presencial e on-line.</p></article>
+      <article class="card"><span class="n">03</span><small>Graduação</small><h3>Psicologia · UPE</h3><p>Graduada pela Universidade de Pernambuco.</p></article>
+      <article class="card"><span class="n">04</span><small>Especialização</small><h3>Saúde Pública</h3><p>Especialista em Saúde Pública.</p></article>
+      <article class="card hl"><span class="n">05</span><small>Mestrado</small><h3>Mestra em Saúde Mental</h3></article>
     </div>
     <div class="bar"><i id="hzb"></i></div>
   </div>
@@ -463,13 +474,12 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
     <div class="sticky">
       <span class="kick rv">Abordagem</span>
       <h2 class="sp" style="margin-top:20px" id="h2b">Fenomenologia <em class="gold">hermenêutica</em></h2>
-      <p class="lead rv" style="margin-top:20px">Minha prática se orienta pela perspectiva fenomenológica hermenêutica. Em palavras simples:</p>
+      <p class="lead rv" style="margin-top:20px">Minha prática clínica tem como referência a perspectiva fenomenológica hermenêutica.</p>
       <figure class="pic mask"><img src="img/leitura.jpg" alt="Suelane Alves lendo em uma poltrona" loading="lazy"></figure>
     </div>
     <div class="stack">
-      <article class="stk" style="--i:0"><b>01</b><h3>Escuta</h3><p>Cada pessoa é ouvida a partir da sua própria experiência, sem respostas prontas.</p></article>
-      <article class="stk" style="--i:1"><b>02</b><h3>Compreensão</h3><p>Buscamos juntos compreender o sentido do que é vivido, no seu tempo.</p></article>
-      <article class="stk" style="--i:2"><b>03</b><h3>Acompanhamento</h3><p>A clínica como lugar de presença e cuidado ao longo do percurso.</p></article>
+      <article class="stk" style="--i:0"><b>01</b><h3>Cada história</h3><p>Compreendo cada pessoa a partir de sua história, de suas relações e dos sentidos que atribui às próprias experiências.</p></article>
+      <article class="stk" style="--i:1"><b>02</b><h3>Escuta e diálogo</h3><p>Na psicoterapia, a escuta e o diálogo abrem espaço para olhar de outras maneiras para aquilo que se vive, sem respostas prontas ou caminhos previamente determinados.</p></article>
     </div>
   </div>
 </section>
@@ -670,9 +680,9 @@ const KB=[
  {k:['online','distancia','video','videochamada','exterior','fora','pais','portugal','eua','europa','internet','remoto'],a:'O atendimento <b>on-line</b> é para pessoas falantes de português, no <b>Brasil e no exterior</b>, por videochamada. Na seção "Atendimento" você vê a hora do seu país e a de Brasília.'+W('Saber sobre o on-line','Olá, Suelane! Gostaria de saber sobre o atendimento on-line.')},
  {k:['presencial','consultorio','garanhuns','pessoalmente'],a:'O atendimento <b>presencial</b> é em Garanhuns/PE, na Rua Dom Luís de Brito, 59, bairro São José.'+W('Saber sobre o presencial','Olá, Suelane! Gostaria de saber sobre o atendimento presencial.')},
  {k:['crianca','criancas','filho','filha','infantil','adolescente','adolescentes','jovem','adulto','adultos'],a:'Há experiência com <b>crianças, adolescentes e adultos</b>, em atendimento individual. O consultório tem um espaço preparado para crianças.'},
- {k:['abordagem','fenomenologica','fenomenologia','hermeneutica','linha','metodo','tcc','psicanalise'],a:'A prática se orienta pela perspectiva <b>fenomenológica hermenêutica</b>: a clínica como espaço de escuta e acompanhamento dos modos singulares de cada pessoa existir.'},
+ {k:['abordagem','fenomenologica','fenomenologia','hermeneutica','linha','metodo','tcc','psicanalise'],a:'A prática clínica tem como referência a perspectiva <b>fenomenológica hermenêutica</b>: cada pessoa é compreendida a partir de sua história, de suas relações e dos sentidos que atribui às próprias experiências.'},
  {k:['urgencia','emergencia','agora','hoje','plantao'],a:'Este site não oferece atendimento de urgência. Em situação de risco à vida, ligue <b>CVV 188</b> (24h) ou <b>SAMU 192</b>. Para agendar, fale pelo WhatsApp.'+W('Falar pelo WhatsApp','Olá, Suelane! Gostaria de agendar um atendimento.')},
- {k:['formacao','graduacao','mestrado','experiencia','curriculo','crp','especializacao','upe'],a:'Graduada em Psicologia pela <b>Universidade de Pernambuco</b>, com formação em <b>Saúde Pública</b> e <b>mestrado em Saúde Mental</b>. Atuou no Sistema Público de Saúde e atende em consultório desde <b>2013</b>. CRP 02/16654.'},
+ {k:['formacao','graduacao','mestrado','experiencia','curriculo','crp','especializacao','upe'],a:'Graduada pela <b>UPE</b>, especialista em <b>Saúde Pública</b> e <b>Mestra em Saúde Mental</b>. Sua trajetória começou em 2013, entre a clínica particular e a saúde pública. CRP 02/16654.'},
  {k:['sigilo','sigiloso','segredo','confidencial','privacidade'],a:'Sim. Todo atendimento é realizado em <b>sigilo profissional</b>.'},
  {k:['preco','valor','valores','quanto','custa','pagamento','plano','convenio'],a:'Valores e formas de pagamento são informados diretamente pelo WhatsApp ou e-mail.'+W('Perguntar valores','Olá, Suelane! Gostaria de saber os valores do atendimento.')},
  {k:['horario','horarios','agendar','marcar','consulta','sessao','vaga','disponibilidade'],a:'Os horários são combinados diretamente com a Suelane. Fale pelo WhatsApp <b>(87) 9.9623-1738</b>.'+W('Combinar horário','Olá, Suelane! Gostaria de verificar horários disponíveis.')},
