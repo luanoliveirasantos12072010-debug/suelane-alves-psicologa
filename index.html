@@ -123,7 +123,7 @@ section{position:relative}
 .hv .ph{position:absolute;inset:0;border-radius:240px 240px 28px 28px;overflow:hidden;box-shadow:0 60px 100px -40px rgba(0,0,0,.6);transform:translate(var(--px,0),var(--py,0));transition:transform 1s var(--ease),clip-path 1.6s var(--io)}
 .hv .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .hv .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(58,34,24,.5))}
-.hv .ring{position:absolute;width:190px;height:190px;left:-70px;bottom:40px;z-index:2;animation:rot 26s linear infinite}
+.hv .ring{display:none;position:absolute;width:190px;height:190px;left:-70px;bottom:40px;z-index:2;animation:rot 26s linear infinite}
 .hv .ring text{font-size:11.5px;letter-spacing:.38em;fill:var(--gold);text-transform:uppercase}
 .hv .ring .c{fill:var(--terra)}
 @keyframes rot{to{rotate:360deg}}
@@ -343,6 +343,29 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
 .ai-f svg{width:18px;height:18px}
 @media(max-width:560px){.ai-btn{padding:6px}.ai-btn .t{display:none}.ai-tip{max-width:calc(100vw - 110px)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.rv,.mask{opacity:1;transform:none;clip-path:none}.sp .c{transform:none}.man .q span{opacity:1}}
+
+/* video do consultorio */
+.vd{background:linear-gradient(180deg,var(--cocoa2),var(--cocoa))}
+.vd .grid{display:grid;grid-template-columns:1fr auto;gap:clamp(30px,6vw,90px);align-items:center}
+.vd ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.vd li{display:flex;gap:12px;font-size:17px}
+.vd li::before{content:"✦";color:var(--gold);font-size:13px;margin-top:4px}
+.vbox{display:flex;flex-direction:column;align-items:center;gap:18px}
+.vfull{display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:999px;border:0;cursor:pointer;background:var(--gold);color:var(--cocoa);font-size:16px;font-weight:500;letter-spacing:.02em;box-shadow:0 18px 40px -16px rgba(224,180,106,.8);animation:vpul 2.6s ease-in-out infinite;transition:transform .5s var(--spring)}
+.vfull:hover{transform:scale(1.05)}
+.vfull svg{width:20px;height:20px}
+@keyframes vpul{50%{box-shadow:0 18px 40px -16px rgba(224,180,106,.8),0 0 0 10px rgba(224,180,106,.18)}}
+.vfr{position:relative;width:min(380px,82vw);aspect-ratio:478/850;border-radius:30px;overflow:hidden;background:#000;box-shadow:0 60px 100px -40px rgba(0,0,0,.7),0 0 0 8px rgba(241,228,211,.08)}
+.vfr video{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none}
+.vfr .shield{position:absolute;inset:0;z-index:2}
+.vtag{position:absolute;left:14px;top:14px;z-index:3;padding:7px 13px;border-radius:999px;background:rgba(0,0,0,.45);color:#fff;font-size:12.5px;letter-spacing:.06em;display:flex;align-items:center;gap:8px;backdrop-filter:blur(6px)}
+.vtag i{width:8px;height:8px;border-radius:50%;background:#ff5a5a;animation:pu2 1.4s ease-in-out infinite}
+@keyframes pu2{50%{opacity:.3}}
+.vm{position:fixed;inset:0;z-index:600;background:rgba(10,8,8,.96);display:grid;place-items:center;padding:16px}
+.vm[hidden]{display:none}
+.vm video{max-width:100%;max-height:calc(100svh - 32px);width:auto;height:calc(100svh - 32px);aspect-ratio:478/850;object-fit:contain;border-radius:16px;pointer-events:none;background:#000}
+.vm button{position:absolute;top:18px;right:18px;z-index:2;width:54px;height:54px;border-radius:50%;border:0;background:var(--gold);color:var(--cocoa);font-size:26px;cursor:pointer}
+@media(max-width:860px){.vd .grid{grid-template-columns:1fr}.vd .grid>div:first-child{text-align:left}}
 </style>
 </head>
 <body>
@@ -362,7 +385,7 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
 
 <header class="top" id="top"><div class="wrap">
   <a class="brand" href="#inicio"><span class="mk">SA</span><span><b>Suelane Alves</b><small>Psicóloga · CRP 02/16654</small></span></a>
-  <nav class="nav"><a href="#trajetoria">Trajetória</a><a href="#atendimento">Atendimento</a><a href="#abordagem">Abordagem</a><a href="#espaco">O espaço</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
+  <nav class="nav"><a href="#trajetoria">Trajetória</a><a href="#atendimento">Atendimento</a><a href="#abordagem">Abordagem</a><a href="#espaco">O espaço</a><a href="#video">Vídeo</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></nav>
   <a class="btn g wa mag" href="#" data-msg="Olá, Suelane! Encontrei seu site e gostaria de mais informações sobre o atendimento."><svg><use href="#i-wa"/></svg><span>Agendar</span></a>
 </div></header>
 
@@ -385,8 +408,6 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
       <div class="arc"></div>
       <div class="ph mask" id="hph"><img src="img/suelane.jpg" alt="Suelane Alves, psicóloga clínica, sentada em uma poltrona do consultório" fetchpriority="high"></div>
       <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="cp" d="M100 100m-82 0a82 82 0 1 1 164 0a82 82 0 1 1-164 0"/></defs><circle class="c" cx="100" cy="100" r="46"/><text><textPath href="#cp">Escuta · Presença · Cuidado · Sigilo ·</textPath></text><text x="100" y="112" text-anchor="middle" style="font-family:Georgia;font-style:italic;font-size:34px;letter-spacing:0;fill:#fbf3e8;text-transform:none">SA</text></svg>
-      <div class="chip c1"><span class="stars">★★★★★</span><b>5,0</b>no Google · 30 avaliações</div>
-      <div class="chip c2"><b>Desde 2013</b>na clínica particular</div>
     </div>
   </div>
   <a class="scroll" href="#manifesto">role<i></i></a>
@@ -411,7 +432,7 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
       <article class="card ph"><img src="img/retrato-notebook.jpg" alt="Suelane Alves fazendo anotações" loading="lazy"></article>
       <article class="card"><span class="n">03</span><small>Mestrado</small><h3>Saúde Mental</h3><p>Mestrado em Saúde Mental.</p></article>
       <article class="card"><span class="n">04</span><small>Experiência</small><h3>Sistema Público de Saúde</h3><p>Trabalho no Sistema Público de Saúde, no interior de Pernambuco.</p></article>
-      <article class="card"><span class="n">05</span><small>Desde 2013</small><h3>Clínica particular</h3><p>Atendimentos individuais e grupais, além da realização de plantão psicológico.</p></article>
+      <article class="card"><span class="n">05</span><small>Desde 2013</small><h3>Clínica particular</h3><p>Atendimento clínico de crianças, adolescentes e adultos, presencial e on-line.</p></article>
     </div>
     <div class="bar"><i id="hzb"></i></div>
   </div>
@@ -428,7 +449,7 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
         <div class="it rv d1"><b>ii.</b><span><h3>Adolescentes</h3><p>Um espaço para uma fase de muitas transformações.</p></span><i>→</i></div>
         <div class="it rv d2"><b>iii.</b><span><h3>Adultos</h3><p>Acompanhamento dos modos singulares de existir.</p></span><i>→</i></div>
       </div>
-      <div class="fm rv"><span>Individual</span><span>Grupal</span><span>Plantão psicológico</span></div>
+      <div class="fm rv"><span>Atendimento individual</span><span>Presencial</span><span>On-line</span></div>
     </div>
     <div>
       <div class="sw rv" id="sw"><span class="pill" id="swp"></span><button type="button" class="on" data-k="p">Presencial</button><button type="button" data-k="o">On-line</button></div>
@@ -467,10 +488,25 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
   <div class="rail" id="rail">
     <figure><img src="img/sala-escuta.jpg" alt="Sala de atendimento com sofá e poltrona" loading="lazy"><figcaption>Sala de atendimento</figcaption></figure>
     <figure><img src="img/suelane.jpg" alt="Suelane Alves na poltrona" loading="lazy"><figcaption>Suelane Alves</figcaption></figure>
-    <figure><img src="img/consultorio-mesa.jpg" alt="Mesa de atendimento com brinquedos" loading="lazy"><figcaption>Atendimento infantil</figcaption></figure>
-    <figure><img src="img/sala-brincar.jpg" alt="Espaço com tapete e brinquedos" loading="lazy"><figcaption>Espaço para brincar</figcaption></figure>
+    <figure><img src="img/sala-quadros.jpg" alt="Sofá e quadros da sala de atendimento" loading="lazy"><figcaption>Sala de atendimento</figcaption></figure>
+    <figure><img src="img/sala-entrada.jpg" alt="Detalhe da sala com orquídea e difusor" loading="lazy"><figcaption>Ambiente acolhedor</figcaption></figure>
     <figure><img src="img/retrato-sofa.jpg" alt="Suelane Alves sentada no sofá" loading="lazy"><figcaption>Consultório em Garanhuns</figcaption></figure>
-    <figure><img src="img/consultorio-infantil.jpg" alt="Estante com bonecos" loading="lazy"><figcaption>Detalhes do espaço</figcaption></figure>
+    <figure><img src="img/espaco-infantil.jpg" alt="Espaço infantil com estante de brinquedos e tapete" loading="lazy"><figcaption>Espaço infantil</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec vd" id="video">
+  <div class="wrap grid">
+    <div>
+      <span class="kick rv">Tour pelo consultório</span>
+      <h2 class="sp" style="margin-top:20px" id="h2v">Conheça o <em class="gold">consultório</em> por dentro</h2>
+      <p class="lead rv" style="margin-top:20px">Um passeio rápido pelo espaço em Garanhuns: a sala de atendimento e o espaço infantil.</p>
+      <ul class="rv"><li>Sala reservada e acolhedora</li><li>Espaço preparado para crianças</li><li>Rua Dom Luís de Brito, 59 · São José</li></ul>
+    </div>
+    <div class="vbox rv">
+      <button type="button" class="vfull" id="vOpen"><svg viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>Veja o vídeo inteiro</button>
+      <div class="vfr"><video id="vMain" src="video/consultorio.mp4" poster="video/consultorio.jpg" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" preload="auto" aria-label="Vídeo mostrando o consultório"></video><div class="shield"></div><span class="vtag"><i></i>Tour pelo consultório</span></div>
+    </div>
   </div>
 </section>
 
@@ -487,7 +523,6 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
       <details class="rv"><summary>Como funciona o atendimento on-line?<i>+</i></summary><p>As sessões acontecem por videochamada, com o mesmo cuidado e sigilo do atendimento presencial. É indicado para pessoas falantes da língua portuguesa, no Brasil e no exterior.</p></details>
       <details class="rv"><summary>Moro fora do Brasil. Posso ser atendido(a)?<i>+</i></summary><p>Sim. Na seção "Atendimento", escolha "On-line" para ver a hora do seu país e a de Brasília.</p></details>
       <details class="rv"><summary>Atende crianças?<i>+</i></summary><p>Sim. Há experiência com crianças, adolescentes e adultos, e o consultório conta com um espaço preparado para o atendimento infantil.</p></details>
-      <details class="rv"><summary>O que é plantão psicológico?<i>+</i></summary><p>É uma modalidade que acolhe a pessoa no momento em que ela procura ajuda, oferecendo escuta para o que está sendo vivido.</p></details>
       <details class="rv"><summary>O atendimento é sigiloso?<i>+</i></summary><p>Sim. Todo atendimento é realizado em sigilo profissional, conforme o Código de Ética do Psicólogo.</p></details>
       <details class="rv"><summary>Quais são os valores e horários?<i>+</i></summary><p>Valores e horários disponíveis são informados diretamente pelo WhatsApp ou e-mail.</p></details>
     </div>
@@ -534,6 +569,7 @@ footer .fb{margin-top:30px;padding-top:24px;border-top:1px solid var(--lineL);di
   <div class="fb"><span>© <span id="yr"></span> Suelane Alves · Psicologia</span><span>Atendimento em sigilo profissional</span></div>
 </div></footer>
 
+<div class="vm" id="vm" hidden role="dialog" aria-label="Vídeo do consultório"><button type="button" id="vClose" aria-label="Fechar">×</button><video id="vBig" muted loop playsinline disablepictureinpicture disableremoteplayback controlslist="nodownload nofullscreen noremoteplayback" preload="none"></video></div>
 <div class="lb" id="lb" hidden><button class="x" aria-label="Fechar">×</button><button class="pv" aria-label="Anterior">‹</button><img alt=""><button class="nx" aria-label="Próxima">›</button></div>
 <a class="waf wa" href="#" data-msg="Olá, Suelane! Encontrei seu site." aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
@@ -599,7 +635,7 @@ function par(){$$('#rail figure').forEach(f=>{const r=f.getBoundingClientRect(),
 
 (function(){
 const Z=[['Brasil (Brasília)','America/Sao_Paulo'],['Portugal','Europe/Lisbon'],['Espanha','Europe/Madrid'],['França / Itália / Alemanha','Europe/Paris'],['Reino Unido','Europe/London'],['Irlanda','Europe/Dublin'],['Suíça','Europe/Zurich'],['EUA · Leste (Nova York, Boston, Miami)','America/New_York'],['EUA · Oeste (Los Angeles)','America/Los_Angeles'],['Canadá (Toronto)','America/Toronto'],['Japão','Asia/Tokyo'],['Austrália (Sydney)','Australia/Sydney'],['Angola','Africa/Luanda'],['Moçambique','Africa/Maputo']];
-const M={p:{img:'sala-escuta.jpg',alt:'Sala de atendimento do consultório',t:'Presencial em <em class="gold">Garanhuns</em>',d:'No consultório da Rua Dom Luís de Brito, 59, bairro São José, em um ambiente reservado e acolhedor.',l:['Crianças, adolescentes e adultos','Espaço para atendimento infantil','Individual e grupal','Plantão psicológico'],m:'Olá, Suelane! Gostaria de saber sobre o atendimento presencial em Garanhuns.'},
+const M={p:{img:'sala-escuta.jpg',alt:'Sala de atendimento do consultório',t:'Presencial em <em class="gold">Garanhuns</em>',d:'No consultório da Rua Dom Luís de Brito, 59, bairro São José, em um ambiente reservado e acolhedor.',l:['Crianças, adolescentes e adultos','Espaço para atendimento infantil','Atendimento individual','Ambiente reservado'],m:'Olá, Suelane! Gostaria de saber sobre o atendimento presencial em Garanhuns.'},
  o:{img:'retrato-notebook.jpg',alt:'Suelane Alves com notebook',t:'On-line, onde <em class="gold">você estiver</em>',d:'Por videochamada, para pessoas falantes da língua portuguesa no Brasil e no exterior.',l:['Brasil e exterior','Mesmo sigilo do presencial','Horário conforme seu fuso','Em português'],m:'Olá, Suelane! Gostaria de saber sobre o atendimento on-line.'}};
 const sw=$('#sw'),p=$('#swp'),box=$('#mode');
 function pos(){const b=sw.querySelector('button.on');p.style.width=b.offsetWidth+'px';p.style.transform='translateX('+(b.offsetLeft-6)+'px)'}
@@ -633,9 +669,9 @@ const W=(t,m)=>'<br><a class="btn w" target="_blank" rel="noopener" href="'+wa(m
 const KB=[
  {k:['online','distancia','video','videochamada','exterior','fora','pais','portugal','eua','europa','internet','remoto'],a:'O atendimento <b>on-line</b> é para pessoas falantes de português, no <b>Brasil e no exterior</b>, por videochamada. Na seção "Atendimento" você vê a hora do seu país e a de Brasília.'+W('Saber sobre o on-line','Olá, Suelane! Gostaria de saber sobre o atendimento on-line.')},
  {k:['presencial','consultorio','garanhuns','pessoalmente'],a:'O atendimento <b>presencial</b> é em Garanhuns/PE, na Rua Dom Luís de Brito, 59, bairro São José.'+W('Saber sobre o presencial','Olá, Suelane! Gostaria de saber sobre o atendimento presencial.')},
- {k:['crianca','criancas','filho','filha','infantil','adolescente','adolescentes','jovem','adulto','adultos'],a:'Há experiência com <b>crianças, adolescentes e adultos</b>, em atendimentos individuais e grupais. O consultório tem um espaço preparado para crianças.'},
+ {k:['crianca','criancas','filho','filha','infantil','adolescente','adolescentes','jovem','adulto','adultos'],a:'Há experiência com <b>crianças, adolescentes e adultos</b>, em atendimento individual. O consultório tem um espaço preparado para crianças.'},
  {k:['abordagem','fenomenologica','fenomenologia','hermeneutica','linha','metodo','tcc','psicanalise'],a:'A prática se orienta pela perspectiva <b>fenomenológica hermenêutica</b>: a clínica como espaço de escuta e acompanhamento dos modos singulares de cada pessoa existir.'},
- {k:['plantao','urgencia','emergencia','agora','hoje'],a:'Há experiência com <b>plantão psicológico</b>. Para disponibilidade, fale pelo WhatsApp. Em situação de risco à vida, ligue <b>CVV 188</b> ou <b>SAMU 192</b>.'+W('Falar pelo WhatsApp','Olá, Suelane! Gostaria de saber sobre o plantão psicológico.')},
+ {k:['urgencia','emergencia','agora','hoje','plantao'],a:'Este site não oferece atendimento de urgência. Em situação de risco à vida, ligue <b>CVV 188</b> (24h) ou <b>SAMU 192</b>. Para agendar, fale pelo WhatsApp.'+W('Falar pelo WhatsApp','Olá, Suelane! Gostaria de agendar um atendimento.')},
  {k:['formacao','graduacao','mestrado','experiencia','curriculo','crp','especializacao','upe'],a:'Graduada em Psicologia pela <b>Universidade de Pernambuco</b>, com formação em <b>Saúde Pública</b> e <b>mestrado em Saúde Mental</b>. Atuou no Sistema Público de Saúde e atende em consultório desde <b>2013</b>. CRP 02/16654.'},
  {k:['sigilo','sigiloso','segredo','confidencial','privacidade'],a:'Sim. Todo atendimento é realizado em <b>sigilo profissional</b>.'},
  {k:['preco','valor','valores','quanto','custa','pagamento','plano','convenio'],a:'Valores e formas de pagamento são informados diretamente pelo WhatsApp ou e-mail.'+W('Perguntar valores','Olá, Suelane! Gostaria de saber os valores do atendimento.')},
@@ -663,6 +699,20 @@ btn.onclick=()=>box.hidden?open():close();$('#aiX').onclick=close;
 f.onsubmit=e=>{e.preventDefault();const v=inp.value.trim();if(!v)return;inp.value='';ask(v)};
 $('#tipX').onclick=()=>tip.hidden=true;setTimeout(()=>{if(box.hidden)tip.hidden=false},8000);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!box.hidden)close()});
+})();
+
+// video: toca sozinho, sem pausa
+(function(){const v=$('#vMain'),b=$('#vBig'),m=$('#vm');
+ const keep=x=>{x.muted=true;x.defaultMuted=true;x.setAttribute('muted','');const go=()=>{if(x.paused&&!(x===b&&m.hidden)){const p=x.play();if(p&&p.catch)p.catch(()=>{})}};x.addEventListener('pause',()=>setTimeout(go,30));x.addEventListener('ended',go);x.addEventListener('canplay',go);x.addEventListener('contextmenu',e=>e.preventDefault());x.addEventListener('click',e=>{e.preventDefault();go()});return go};
+ const gv=keep(v),gb=keep(b);gv();
+ ['touchstart','pointerdown','scroll','keydown'].forEach(ev=>addEventListener(ev,gv,{passive:true}));
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden){gv();gb()}});
+ new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)gv()})).observe(v);
+ setInterval(gv,1500);
+ $('#vOpen').onclick=()=>{if(!b.src)b.src=v.currentSrc||v.src;b.currentTime=0;m.hidden=false;gb()};
+ const close=()=>{m.hidden=true;b.pause()};$('#vClose').onclick=close;
+ addEventListener('keydown',e=>{if(e.key==='Escape'&&!m.hidden)close()});
+ [v,b].forEach(x=>x.addEventListener('keydown',e=>{if(e.key===' '||e.key==='k')e.preventDefault()}));
 })();
 </script>
 </body>
